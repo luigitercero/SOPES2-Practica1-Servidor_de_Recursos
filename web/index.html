@@ -1,0 +1,403 @@
+<html>
+  <head>
+    <title>SOPES</title>
+    <meta content="">
+    <style></style>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="/public/vendor/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+ 
+  <body>
+
+
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--<style>
+    body {
+        padding-top: 50px;
+    }
+</style>Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="public/vendor/materialize/css/materialize.min.css" media="screen,projection" />
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script type="text/javascript" src="public/vendor/materialize/js/materialize.min.js"></script>
+ <script type="text/javascript" src="public/jquery-2.1.1.min.js"></script>
+
+
+     <!--Load the AJAX API-->
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
+ 
+       // Load the Visualization API and the corechart package.
+       google.charts.load('current', {'packages':['corechart']});
+ 
+       // Set a callback to run when the Google Visualization API is loaded.
+       google.charts.setOnLoadCallback(drawChart);
+ 
+       // Callback that creates and populates a data table,
+       // instantiates the pie chart, passes in the data and
+       // draws it.
+       function drawChart() {
+ 
+         // Create the data table.
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Topping');
+         data.addColumn('number', 'Slices');
+         data.addRows([
+           ['Mushrooms', 3],
+           ['Onions', 1],
+           ['Olives', 1],
+           ['Zucchini', 1],
+           ['Pepperoni', 2]
+         ]);
+ 
+         // Set chart options
+         var options = {'title':'How Much Pizza I Ate Last Night',
+                        'width':400,
+                        'height':300};
+ 
+         // Instantiate and draw our chart, passing in some options.
+         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+         chart.draw(data, options);
+       }
+     </script>
+ 
+Procesos
+estoy en la vitual
+
+<script type="text/javascript">
+var link=
+"http://192.168.0.137:8080/SOPES2_monitor_De_Recursos/";
+
+  var cpu_S = [
+      [0, 0], [10, 5], [23, 15], [17, 9], [18, 10], [9, 5],
+      [11, 3], [27, 19], [33, 25], [40, 32], [32, 24], [35, 27],
+      [30, 22], [40, 32], [42, 34], [47, 39], [44, 36], [48, 40],
+      [52, 44], [54, 46], [42, 34], [55, 47], [56, 48], [57, 49],
+      [60, 52], [50, 42], [52, 44], [51, 43], [49, 41], [53, 45],
+      [55, 47], [60, 52], [61, 53], [59, 51], [62, 54], [65, 57],
+      [62, 54], [58, 50], [55, 47], [61, 53], [64, 56], [65, 57],
+      [63, 55], [66, 58], [67, 59], [69, 61], [69, 61], [70, 62],
+      [72, 64], [68, 60], [66, 58], [65, 57], [67, 59], [70, 62],
+      [71, 63], [72, 64], [73, 65], [75, 67], [70, 62], [68, 60],
+      [64, 56], [60, 52], [65, 57], [67, 59], [68, 60], [69, 61],
+      [70, 62], [72, 64], [75, 67], [80, 72]
+
+  ];
+
+  var ram_S = [
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50, 50, 50,
+      50, 50, 50, 50
+
+  ];
+
+  function drawCurveTypes() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'cpu: ');
+      data.addColumn('number', 'cpu2: ');
+      /*
+              let a = "["
+              for (let index = 0; index < 70; index++) {
+                  if (index > 0) {
+                      a = a + ",";
+                  }
+                  a = a + "[" + (69 - index) + ", " + "cpu_S[" + index + "]" + "[0]" + "," + "cpu_S[" + index + "]" + "[1]" + "]";
+              }
+              a = a + "]";
+              console.log(a);
+      */
+      data.addRows([[69, cpu_S[0][0], cpu_S[0][1]], [68, cpu_S[1][0], cpu_S[1][1]], [67, cpu_S[2][0], cpu_S[2][1]], [66, cpu_S[3][0], cpu_S[3][1]], [65, cpu_S[4][0], cpu_S[4][1]], [64, cpu_S[5][0], cpu_S[5][1]], [63, cpu_S[6][0], cpu_S[6][1]], [62, cpu_S[7][0], cpu_S[7][1]], [61, cpu_S[8][0], cpu_S[8][1]], [60, cpu_S[9][0], cpu_S[9][1]], [59, cpu_S[10][0], cpu_S[10][1]], [58, cpu_S[11][0], cpu_S[11][1]], [57, cpu_S[12][0], cpu_S[12][1]], [56, cpu_S[13][0], cpu_S[13][1]], [55, cpu_S[14][0], cpu_S[14][1]], [54, cpu_S[15][0], cpu_S[15][1]], [53, cpu_S[16][0], cpu_S[16][1]], [52, cpu_S[17][0], cpu_S[17][1]], [51, cpu_S[18][0], cpu_S[18][1]], [50, cpu_S[19][0], cpu_S[19][1]], [49, cpu_S[20][0], cpu_S[20][1]], [48, cpu_S[21][0], cpu_S[21][1]], [47, cpu_S[22][0], cpu_S[22][1]], [46, cpu_S[23][0], cpu_S[23][1]], [45, cpu_S[24][0], cpu_S[24][1]], [44, cpu_S[25][0], cpu_S[25][1]], [43, cpu_S[26][0], cpu_S[26][1]], [42, cpu_S[27][0], cpu_S[27][1]], [41, cpu_S[28][0], cpu_S[28][1]], [40, cpu_S[29][0], cpu_S[29][1]], [39, cpu_S[30][0], cpu_S[30][1]], [38, cpu_S[31][0], cpu_S[31][1]], [37, cpu_S[32][0], cpu_S[32][1]], [36, cpu_S[33][0], cpu_S[33][1]], [35, cpu_S[34][0], cpu_S[34][1]], [34, cpu_S[35][0], cpu_S[35][1]], [33, cpu_S[36][0], cpu_S[36][1]], [32, cpu_S[37][0], cpu_S[37][1]], [31, cpu_S[38][0], cpu_S[38][1]], [30, cpu_S[39][0], cpu_S[39][1]], [29, cpu_S[40][0], cpu_S[40][1]], [28, cpu_S[41][0], cpu_S[41][1]], [27, cpu_S[42][0], cpu_S[42][1]], [26, cpu_S[43][0], cpu_S[43][1]], [25, cpu_S[44][0], cpu_S[44][1]], [24, cpu_S[45][0], cpu_S[45][1]], [23, cpu_S[46][0], cpu_S[46][1]], [22, cpu_S[47][0], cpu_S[47][1]], [21, cpu_S[48][0], cpu_S[48][1]], [20, cpu_S[49][0], cpu_S[49][1]], [19, cpu_S[50][0], cpu_S[50][1]], [18, cpu_S[51][0], cpu_S[51][1]], [17, cpu_S[52][0], cpu_S[52][1]], [16, cpu_S[53][0], cpu_S[53][1]], [15, cpu_S[54][0], cpu_S[54][1]], [14, cpu_S[55][0], cpu_S[55][1]], [13, cpu_S[56][0], cpu_S[56][1]], [12, cpu_S[57][0], cpu_S[57][1]], [11, cpu_S[58][0], cpu_S[58][1]], [10, cpu_S[59][0], cpu_S[59][1]], [9, cpu_S[60][0], cpu_S[60][1]], [8, cpu_S[61][0], cpu_S[61][1]], [7, cpu_S[62][0], cpu_S[62][1]], [6, cpu_S[63][0], cpu_S[63][1]], [5, cpu_S[64][0], cpu_S[64][1]], [4, cpu_S[65][0], cpu_S[65][1]], [3, cpu_S[66][0], cpu_S[66][1]], [2, cpu_S[67][0], cpu_S[67][1]], [1, cpu_S[68][0], cpu_S[68][1]], [0, cpu_S[69][0], cpu_S[69][1]]]);
+
+      var options = {
+          hAxis: {
+              title: 'Time'
+          },
+          vAxis: {
+              title: 'Popularity'
+          },
+          series: {
+              1: { curveType: 'function' }
+          }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+  }
+
+
+  function drawingRam() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'RAM: ');
+
+      data.addRows([[69, ram_S[0]], [68, ram_S[1]], [67, ram_S[2]], [66, ram_S[3]], [65, ram_S[4]],
+      [64, ram_S[5]], [63, ram_S[6]], [62, ram_S[7]], [61, ram_S[8]], [60, ram_S[9]], [59, ram_S[10]],
+      [58, ram_S[11]], [57, ram_S[12]], [56, ram_S[13]], [55, ram_S[14]], [54, ram_S[15]], [53, ram_S[16]],
+      [52, ram_S[17]], [51, ram_S[18]], [50, ram_S[19]], [49, ram_S[20]], [48, ram_S[21]], [47, ram_S[22]],
+      [46, ram_S[23]], [45, ram_S[24]], [44, ram_S[25]], [43, ram_S[26]], [42, ram_S[27]], [41, ram_S[28]],
+      [40, ram_S[29]], [39, ram_S[30]], [38, ram_S[31]], [37, ram_S[32]], [36, ram_S[33]], [35, ram_S[34]],
+      [34, ram_S[35]], [33, ram_S[36]], [32, ram_S[37]], [31, ram_S[38]], [30, ram_S[39]], [29, ram_S[40]],
+      [28, ram_S[41]], [27, ram_S[42]], [26, ram_S[43]], [25, ram_S[44]], [24, ram_S[45]], [23, ram_S[46]],
+      [22, ram_S[47]], [21, ram_S[48]], [20, ram_S[49]], [19, ram_S[50]], [18, ram_S[51]], [17, ram_S[52]],
+      [16, ram_S[53]], [15, ram_S[54]], [14, ram_S[55]], [13, ram_S[56]], [12, ram_S[57]], [11, ram_S[58]],
+      [10, ram_S[59]], [9, ram_S[60]], [8, ram_S[61]], [7, ram_S[62]], [6, ram_S[63]], [5, ram_S[64]],
+      [4, ram_S[65]], [3, ram_S[66]], [2, ram_S[67]], [1, ram_S[68]], [0, ram_S[69]]]);
+      var options = {
+          hAxis: {
+              title: 'Time'
+          },
+          vAxis: {
+              title: 'Popularity'
+          },
+          series: {
+              1: { curveType: 'function' }
+          }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chartRAM'));
+      chart.draw(data, options);
+  }
+  function drawChart(ram) {
+      let usado = ram.total - ram.libre;
+      let libre = ram.libre;
+      //console.log(usado);
+      //console.log(libre);
+
+
+      var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Usado', usado],
+          ['Libre', libre]
+      ]);
+
+      var options = {
+          title: 'total: ' + ram.total + ' Byte'
+      };
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart.draw(data, options);
+  }
+
+  $(document).ready(function () {
+      setInterval(function () {
+          getRamCPU();
+          getProc();
+      }, 1000);
+  });
+
+  function getProc() {
+      //console.log('getProc');
+    
+
+      $.ajax({
+          type: 'POST',
+          //data: JSON.stringify(data),
+          contentType: 'application/json',
+          url: link+"Procesos",
+          success: function (data) {
+              //console.log('success');
+              //console.log(JSON.stringify(data));
+              let dat2 = JSON.stringify(data);
+              //console.log(dat2);
+              imprimirPocesos(data)
+          },
+          error: function () { console.log('error al querer obtener proc'); }
+
+      });
+  }
+  function imprimirPocesos(data) {
+
+      $('#proc').empty()
+      let a = 0;
+      data.proceso.forEach(element => {
+
+          $('#proc').append("<tr>"
+              + "<th>" + element.PID + "</th>"
+              + "<th>" + element.nombre + "</th>"
+              + "<th>" + element.UsuarioId + "</th>"
+              + "<th>" + element.estado + "</th>"
+              + "<th> " + "<a id=\"" + element.PID + "\" onClick=\"matar(" + element.PID + ")\"class=\"waves-effect waves-light btn\">kill</a>" + "</th>"
+              +
+
+              + "</tr>");
+          a++;
+      });
+  }
+  function matar(id) {
+      console.log(id);
+
+
+
+      var data = {};
+      data.title = "title";
+      data.message = id;
+
+      $.ajax({
+          type: 'POST',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+          url: 'http://localhost:8080/matar',
+          success: function (data) {
+              console.log('success');
+              //console.log(JSON.stringify(data));
+          },
+          error: function () { console.log('error'); }
+      });
+
+
+  }
+  function imprimirCPUUso(cpu, dato) {
+      //console.log(dato);
+      $('#' + cpu).empty()
+      let a = 0;
+      $('#' + cpu).append(cpu + ": " + dato);
+      a++;
+
+
+  }
+  function getRamCPU() {
+      //console.log('get ram');
+      /*
+      var data = {};
+      data.title = "title";
+      data.message = "message";
+        */
+      $.ajax({
+          type: 'POST',
+          //data: JSON.stringify(data),
+          contentType: 'application/json',
+          url: link+"Cpu",
+          success: function (data) {
+              // console.log('success');
+              //console.log(JSON.stringify(data));
+              let dat2 = JSON.stringify(data);
+              //console.log(dat2);
+              google.charts.load('current', { 'packages': ['corechart'] });
+              google.charts.setOnLoadCallback(drawChart(data.ram));
+              ram_S.shift();
+              ram_S.push(data.ram.porcentaje);
+              cpu_S.shift();
+              cpu_S.push([data.cpu1.porcentaje, data.cpu2.porcentaje]);
+
+              google.charts.load('current', { packages: ['corechart', 'line'] });
+              google.charts.setOnLoadCallback(drawCurveTypes);
+              google.charts.setOnLoadCallback(drawingRam);
+
+              imprimirCPUUso("cpu1", data.cpu1.uso);
+              imprimirCPUUso("cpu2", data.cpu2.uso);
+
+          },
+          error: function () { console.log('error en el archivo ram'); }
+
+      });
+
+  }
+
+  $(function () {
+      $('#select_link').click(function (e) {
+          e.preventDefault();
+          //console.log('select_link clicked');
+          var data = {};
+          data.title = "title";
+          data.message = "message";
+
+          $.ajax({
+              type: 'POST',
+              data: JSON.stringify(data),
+              contentType: 'application/json',
+              
+              url: 'http://localhost:8080/endpoint',
+              success: function (data) {
+                  //console.log('success');
+                  //console.log(JSON.stringify(data));
+              },
+              error: function () { console.log('error'); }
+          });
+      });
+  });
+</script>
+
+<% include bodyIndex/graph %>
+
+<div class="divider"></div>
+<div class="section">
+    <h5>RAM</h5>
+    <div class="row">
+        <div class="col s12 m10">
+            <div class="card-panel">
+                <div id="piechart"></div>
+                <div id="chartRAM"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="divider"></div>
+<div class="section">
+    <h5>CPU</h5>
+    <div class="row">
+        <div class="col s12 m10">
+            <div class="card-panel teal">
+                <div id='cpu1'>cpu1</div>
+                <div id='cpu2'>cpu2</div>
+                <div id="chart_div"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+<div class="section">
+    <h5>Procesos</h5>
+    <div class="row">
+        <div class="col s12 m10">
+            <div class="card-panel teal">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s8 offset-s2">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Pid</th>
+                                            <th>nombre</th>
+                                            <th>Id Usuario</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="proc">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <pre id="objeto"></pre>
+                        <ul id="lista"></ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="text-center text-muted">© Copyright 2018 Luigitercero</p>
+  
+  
+  </body>
+</html>
